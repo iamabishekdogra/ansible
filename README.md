@@ -6,17 +6,17 @@ Ansible is an open-source automation tool designed to automate configuration man
 
 Key Features
 
-Agentless: Ansible doesn’t require any agents to be installed on the target machines. It uses SSH for communication.
-Declarative Language: Ansible uses a simple, human-readable language (YAML) to describe your infrastructure.
-Idempotent: Ansible ensures that changes are applied only when necessary, avoiding repeated modifications.
-Modular: It supports a wide range of modules and plugins to extend its capabilities.
+Agentless:  Ansible doesn’t require any agents to be installed on the target machines. It uses SSH for communication.
+Declarative Language:  Ansible uses a simple, human-readable language (YAML) to describe your infrastructure.
+Idempotent:  Ansible ensures that changes are applied only when necessary, avoiding repeated modifications.
+Modular:  It supports a wide range of modules and plugins to extend its capabilities.
 
 Components
 
-Playbooks: YAML files where you define the tasks to be executed on your managed nodes.
-Inventories: Lists of hosts or groups of hosts where tasks are to be executed.
-Roles: Reusable units of configuration that encapsulate tasks, variables, and handlers.
-Modules: Units of code that Ansible executes on your managed nodes, such as installing packages or copying files.
+Playbooks:  YAML files where you define the tasks to be executed on your managed nodes.
+Inventories:  Lists of hosts or groups of hosts where tasks are to be executed.
+Roles:  Reusable units of configuration that encapsulate tasks, variables, and handlers.
+Modules:  Units of code that Ansible executes on your managed nodes, such as installing packages or copying files.
 
 Basic Commands
 

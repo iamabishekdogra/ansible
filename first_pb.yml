@@ -6,3 +6,6 @@
     - name: Test connectivity
       ping:
 
+    - name: Print Output
+      debug: msg="Alright!!"
+

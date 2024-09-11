@@ -1,0 +1,7 @@
+---
+- name: Install nodejs on node server
+  hosts: server
+  become: yes
+  roles:
+    - my_roles
+   

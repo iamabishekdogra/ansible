@@ -1,0 +1,24 @@
+---
+- name: Mange files in remote server
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Creating a text  file on remote server
+      file:
+        path: /home/ubuntu/abhi/data-1.txt
+        state: touch
+        mode: '765'
+
+    - name: Change permission
+      file:
+        path: /home/ubuntu/abhi/data2.txt
+        mode: '766'
+
+    - name: deleting file from remte server
+      file:
+        path: /home/ubuntu/abhi/data3.txt
+        state: absent
+
+
+

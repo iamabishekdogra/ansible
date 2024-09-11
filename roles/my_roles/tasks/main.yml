@@ -1,0 +1,30 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Node.js
+  apt:
+    name: nodejs
+    state: present
+
+- name: Install npm
+  apt:
+    name: npm
+    state: present
+
+- name: Verify Node.js installation
+  command: node -v
+  register: node_installed
+  ignore_errors: yes
+
+- name: Check if Node.js was installed successfully
+  debug:
+    msg: "Node.js was installed successfully, version: {{ node_installed.stdout }}"
+  when: node_installed.rc == 0
+
+- name: Node.js is not installed
+  debug:
+    msg: "Node.js is not installed"
+  when: node_installed.rc != 0
+

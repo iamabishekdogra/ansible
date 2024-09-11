@@ -1,0 +1,27 @@
+---
+- name: Install and Run Java
+  hosts: all
+  become: yes
+
+  vars: 
+    java_version: "openjdk-11-jdk"
+
+  tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install java
+      apt:
+        name: "{{ java_version }}"
+        state: present
+
+    - name: Check Installation
+      command: java -version
+      register: java_installed
+      ignore_errors: yes
+
+    - name: check if java was installed or not
+      debug:
+        msg: "java is installed successfully"
+      when: java_installed.rc==0 

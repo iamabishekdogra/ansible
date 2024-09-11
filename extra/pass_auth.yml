@@ -1,0 +1,10 @@
+---
+- name: Distribute ssh key to all server
+  hosts: web_servers
+
+  tasks:
+    - name: Install authorized key
+      authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"  

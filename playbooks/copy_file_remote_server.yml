@@ -1,0 +1,14 @@
+---
+- name: Copy file to remote servers
+  hosts: all
+  become: yes
+
+  tasks: 
+  - name: Copy files to remote server
+    copy:
+      src: /home/abhishek/devops/ansible/data.txt
+      dest: /home/ubuntu/abhi
+      owner: ubuntu
+      group: ubuntu
+      mode: ug=rw
+      backup: true

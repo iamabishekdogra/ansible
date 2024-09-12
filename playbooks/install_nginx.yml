@@ -1,0 +1,7 @@
+# playbook that installs the latest version of nginx on a remote server
+---
+- name: install nginx on remote server
+  hosts: server
+  become: yes
+  roles:
+    - my_role1

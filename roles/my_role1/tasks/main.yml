@@ -1,0 +1,29 @@
+---
+    - name: Update cache
+      apt:
+        update_cache: yes
+
+    - name: install nginx on ubuntu
+      apt:
+        name: nginx
+        state: present
+
+    - name: Verify nginx installation
+      command: nginx -v
+      register: nginx_installed
+      ignore_errors: yes
+
+    - name: Check if nginx is installed successfully
+      ansible.builtin.debug:
+        msg: "nginx is installed successfully"
+      when: nginx_installed.rc == 0
+
+    - name: Ensure nginx started
+      ansible.builtin.service:
+        name: nginx
+        state: started
+
+    - name: Enable nginx started at boot
+      ansible.builtin.service:
+        name: nginx
+        enabled: yes

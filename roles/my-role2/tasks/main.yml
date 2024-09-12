@@ -1,0 +1,14 @@
+---
+- name: adding devuser on remote server
+  ansible.builtin.user:
+      name: devuser
+      password: "{{ '$1$CbKJOeA4$mAcdS.7wAQTP183xvYJAz0' }}"
+      shell: /bin/bash
+      state: present
+
+- name: grant devuser sudo privileges
+  ansible.builtin.user:
+      path: /etc/sudoers
+      state: present
+      line: "devuser All=(All) NOPASSWD: All"
+      validate: '/usr/sbin/visudo -cf %s'

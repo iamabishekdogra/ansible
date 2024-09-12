@@ -1,0 +1,6 @@
+---
+- name: adding user named devuser
+  hosts: server
+  become: yes
+  roles:
+    - my-role2

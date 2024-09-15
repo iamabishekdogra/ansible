@@ -1,0 +1,6 @@
+---
+- name: Configure and deploy software on  remote servers
+  hosts: server
+  become: true
+  roles:
+    - config_management

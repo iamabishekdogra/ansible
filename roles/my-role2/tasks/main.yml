@@ -10,5 +10,5 @@
   ansible.builtin.lineinfile:
         path: /etc/sudoers
         state: present
-        line: "devuser ALL=(ALL) NOPASSWD:ALL"
+        line: "devuser ALL=(ALL) NOPASSWD:ALL"'
         validate: '/usr/sbin/visudo -cf %s'

@@ -1,11 +1,1 @@
----
-- name: First Basic PB
-  hosts: localhost
-
-  tasks:
-    - name: Test connectivity
-      ping:
-
-    - name: Print Output
-      debug: msg="Alright!!"
 

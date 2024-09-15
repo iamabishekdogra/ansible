@@ -1,6 +1,6 @@
 ---
 - name: Distribute ssh key to all server
-  hosts: all_servers
+  hosts: server
   tasks:
     - name: Install authorized key
       authorized_key:

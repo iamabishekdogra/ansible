@@ -6,9 +6,9 @@
       shell: /bin/bash
       state: present
 
-- name: grant devuser sudo privileges
-  ansible.builtin.user:
-      path: /etc/sudoers
-      state: present
-      line: "devuser All=(All) NOPASSWD: All"
-      validate: '/usr/sbin/visudo -cf %s'
+- name: Grant devuser sudo privileges
+  ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        state: present
+        line: "devuser ALL=(ALL) NOPASSWD:ALL"
+        validate: '/usr/sbin/visudo -cf %s'
